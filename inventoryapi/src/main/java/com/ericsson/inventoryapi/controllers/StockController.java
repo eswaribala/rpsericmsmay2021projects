@@ -11,10 +11,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ericsson.inventoryapi.models.Stock;
 import com.ericsson.inventoryapi.services.StockService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.bohnman.squiggly.Squiggly;
+import com.github.bohnman.squiggly.util.SquigglyUtils;
 
 @RestController
 @RequestMapping("/stocks")
@@ -73,5 +77,19 @@ public class StockController {
 		 
 		 
 	 }
+	 
+	 
+	//http://localhost:7070/stocks/v1.0/filters?fields=invoiceNo,qty
+			@GetMapping({"/v1.0/filters", "/v1.1/filters"})
+		    public String getFilteredStock(@RequestParam(name = "fields", required = false) 
+		    String fields) 
+			{
+
+				List<Stock> stockList = getAllStocks();
+				ObjectMapper mapper = Squiggly.init(new ObjectMapper(), fields);  
+				return SquigglyUtils.stringify(mapper, stockList);
+				
+		    }
+
 	 
 }

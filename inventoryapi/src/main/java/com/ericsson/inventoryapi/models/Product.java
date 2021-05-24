@@ -3,6 +3,8 @@ package com.ericsson.inventoryapi.models;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
@@ -30,6 +32,7 @@ public class Product {
     @Column(name="Product_Name")
 	private String name;
     @Column(name="Product_Type")
+    @Enumerated(EnumType.STRING)
 	private ProductType productType;
     @Column(name="Cost")
 	private long cost;

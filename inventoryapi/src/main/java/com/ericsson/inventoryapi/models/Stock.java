@@ -34,6 +34,8 @@ public class Stock {
 	private long invoiceNo;
     @Column(name="Price")
 	private long price;
+    @Column(name="Qty")
+    private long qty;
     @Column(name="DOP")
     @DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dop;
