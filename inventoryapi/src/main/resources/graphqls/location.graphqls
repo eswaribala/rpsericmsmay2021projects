@@ -1,6 +1,6 @@
 type Location {
 	locationId: ID!
-	name: String
+	contactNo: Int
 	address:Address
 	
 }

@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ericsson.inventoryapi.models.Stock;
 import com.ericsson.inventoryapi.services.StockService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.bohnman.squiggly.Squiggly;
-import com.github.bohnman.squiggly.util.SquigglyUtils;
+//import com.github.bohnman.squiggly.Squiggly;
+//import com.github.bohnman.squiggly.util.SquigglyUtils;
 
 @RestController
 @RequestMapping("/stocks")
@@ -80,7 +80,8 @@ public class StockController {
 	 
 	 
 	//http://localhost:7070/stocks/v1.0/filters?fields=invoiceNo,qty
-			@GetMapping({"/v1.0/filters", "/v1.1/filters"})
+	/*		
+	 @GetMapping({"/v1.0/filters", "/v1.1/filters"})
 		    public String getFilteredStock(@RequestParam(name = "fields", required = false) 
 		    String fields) 
 			{
@@ -90,6 +91,6 @@ public class StockController {
 				return SquigglyUtils.stringify(mapper, stockList);
 				
 		    }
-
+*/
 	 
 }

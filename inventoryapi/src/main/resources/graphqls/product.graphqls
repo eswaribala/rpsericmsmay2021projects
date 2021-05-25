@@ -1,13 +1,12 @@
 schema {
-    query: Query
-    
+    query: Query    
 }
 type Product {
 	productId: ID!
 	name: String
 	cost: Int
 	bufferLevel: Int
-	productType: 
+	productType: ProductType
 	
 }
 
