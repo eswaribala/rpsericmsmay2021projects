@@ -1,0 +1,28 @@
+schema {
+    query: Query
+    
+}
+type Product {
+	productId: ID!
+	name: String
+	cost: Int
+	bufferLevel: Int
+	productType: 
+	
+}
+
+enum ProductType{
+
+	Electronics
+	Furniture
+	Garments
+	Jewellery
+}
+
+
+#root
+type Query {
+	findAllProducts:[Product]
+	findProduct(productId: ID):Product
+}
+
