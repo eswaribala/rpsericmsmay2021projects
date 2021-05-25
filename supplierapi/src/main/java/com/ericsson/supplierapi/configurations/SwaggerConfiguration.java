@@ -1,4 +1,4 @@
-package com.ericsson.productapi.configurations;
+package com.ericsson.supplierapi.configurations;
 
 import java.util.Collections;
 import java.util.Date;
@@ -31,13 +31,13 @@ public class SwaggerConfiguration {
 	 public static final String DEFAULT_INCLUDE_PATTERN = "/api/.*";
    
     @Bean
-    public Docket apiDocketProductv10() {
+    public Docket apiDocketSupplierv10() {
     	return new Docket(DocumentationType.SWAGGER_2)
-        		.groupName("product-api-1.0")
+        		.groupName("supplier-api-1.0")
                 .select()
                 .apis(RequestHandlerSelectors
-                        .basePackage("com.ericsson.productapi"))
-                .paths(PathSelectors.regex("/products/v1.0.*"))
+                        .basePackage("com.ericsson.supplierapi"))
+                .paths(PathSelectors.regex("/suppliers/v1.0.*"))
                 .build()
                 .apiInfo(getApiInfo())
                 .forCodeGeneration(true)
@@ -52,13 +52,13 @@ public class SwaggerConfiguration {
                 .useDefaultResponseMessages(false);
     }
     @Bean
-    public Docket apiDocketProductv11() {
+    public Docket apiDocketSupplierv11() {
     	return new Docket(DocumentationType.SWAGGER_2)
-        		.groupName("product-api-1.1")
+        		.groupName("supplier-api-1.1")
                 .select()
                 .apis(RequestHandlerSelectors
-                        .basePackage("com.ericsson.productapi"))
-                .paths(PathSelectors.regex("/products/v1.1.*"))
+                        .basePackage("com.ericsson.supplierapi"))
+                .paths(PathSelectors.regex("/suppliers/v1.1.*"))
                 .build()
                 .apiInfo(getApiInfo())
                 .forCodeGeneration(true)
@@ -72,12 +72,9 @@ public class SwaggerConfiguration {
                 .securitySchemes(Lists.newArrayList(apiKey()))
                 .useDefaultResponseMessages(false);
     }
-    
-    
-   
     private ApiInfo getApiInfo() {
         return new ApiInfo(
-                "Product API",
+                "Supplier API",
                 "App to demonstrate API Documentation",
                 "0.0.1-SNAPSHOT",
                 "Terms of Service",

@@ -1,0 +1,24 @@
+schema {
+    query: Query    
+}
+type Supplier {
+	supplierId: ID!
+	supplierName: String
+	productId: Int
+	address:Address
+	
+}
+
+type Address{
+  doorNo: String
+  streetName: String
+  city: String
+  state: String
+  pinCode: String
+
+}
+
+type Query {
+	findAllSuppliers:[Supplier]
+	findSupplier(supplierId: ID):Supplier
+}
