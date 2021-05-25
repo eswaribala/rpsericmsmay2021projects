@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ericsson</groupId>
-	<artifactId>inventoryapi</artifactId>
+	<artifactId>supplierapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>inventoryapi</name>
+	<name>supplierapi</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
