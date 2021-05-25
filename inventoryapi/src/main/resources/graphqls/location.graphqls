@@ -1,0 +1,21 @@
+type Location {
+	locationId: ID!
+	name: String
+	address:Address
+	
+}
+
+type Address{
+  doorNo: String
+  streetName: String
+  city: String
+  state: String
+  pinCode: String
+
+}
+
+extend type Query {
+	findAllLocations:[Location]
+	findLocation(locationId: ID):Location
+}
+

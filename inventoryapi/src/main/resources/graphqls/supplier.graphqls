@@ -1,0 +1,21 @@
+type Supplier {
+	supplierId: ID!
+	supplierName: String
+	product:Product
+	address:Address
+	
+}
+
+type Address{
+  doorNo: String
+  streetName: String
+  city: String
+  state: String
+  pinCode: String
+
+}
+
+extend type Query {
+	findAllSuppliers:[Supplier]
+	findSupplier(supplierId: ID):Supplier
+}

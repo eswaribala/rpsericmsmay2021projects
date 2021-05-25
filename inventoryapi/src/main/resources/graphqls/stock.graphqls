@@ -1,0 +1,16 @@
+type Stock {
+	invoiceNo: ID!
+	price: Int
+	qty: Int
+	dop: String
+	product: Product
+	location: Location
+	
+}
+
+
+
+extend type Query {
+	findAllStocks:[Stock]
+	findStock(invoiceNo: ID):Stock
+}
