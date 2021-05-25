@@ -1,4 +1,4 @@
-package com.ericsson.inventoryapi.configurations;
+package com.ericsson.productapi.configurations;
 
 import java.util.Collections;
 import java.util.Date;

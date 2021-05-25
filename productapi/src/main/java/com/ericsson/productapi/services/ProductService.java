@@ -1,12 +1,12 @@
-package com.ericsson.inventoryapi.services;
+package com.ericsson.productapi.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ericsson.inventoryapi.models.Product;
-import com.ericsson.inventoryapi.repositories.ProductRepository;
+import com.ericsson.productapi.models.Product;
+import com.ericsson.productapi.repositories.ProductRepository;
 
 @Service
 public class ProductService {

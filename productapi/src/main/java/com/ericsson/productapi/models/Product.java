@@ -1,4 +1,4 @@
-package com.ericsson.inventoryapi.models;
+package com.ericsson.productapi.models;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

@@ -1,4 +1,4 @@
-package com.ericsson.inventoryapi.controllers;
+package com.ericsson.productapi.controllers;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ericsson.inventoryapi.models.Product;
-import com.ericsson.inventoryapi.services.ProductService;
+import com.ericsson.productapi.models.Product;
+import com.ericsson.productapi.services.ProductService;
 
 @RestController
 @RequestMapping("/products")

@@ -1,4 +1,4 @@
-package com.ericsson.inventoryapi.queryresolvers;
+package com.ericsson.productapi.queryresolvers;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.ericsson.inventoryapi.models.Product;
-import com.ericsson.inventoryapi.services.ProductService;
+import com.ericsson.productapi.models.Product;
+import com.ericsson.productapi.services.ProductService;
 @Component
 public class ProductQueryResolver implements GraphQLQueryResolver {
 	@Autowired
