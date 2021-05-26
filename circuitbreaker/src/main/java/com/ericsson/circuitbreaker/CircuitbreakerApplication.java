@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 
 @SpringBootApplication
 @EnableHystrixDashboard
-//@EnableCircuitBreaker
+@EnableCircuitBreaker
 public class CircuitbreakerApplication {
 
 	public static void main(String[] args) {
