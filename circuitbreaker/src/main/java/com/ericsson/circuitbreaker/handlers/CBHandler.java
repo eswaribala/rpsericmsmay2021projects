@@ -20,7 +20,7 @@ public class CBHandler {
     private String serviceUrl;
     @Value("${fallBackUrl}")
     private String fallBackUrl;
-   /**
+   
     @HystrixCommand(commandKey = "GetCustomerCommand", groupKey = "CustomerGroupKey", threadPoolKey = "Test",
     		fallbackMethod = "fallbackRequestHandler",
             commandProperties = {
@@ -35,7 +35,7 @@ public class CBHandler {
                     @HystrixProperty(name = "queueSizeRejectionThreshold", value = "15"),
                     @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "1440")
             })
-       **/
+       /*
     @HystrixCommand(commandKey = "GetCustomerCommand", groupKey = "CustomerGroupKey", threadPoolKey = "Test",
     		fallbackMethod = "fallbackRequestHandler",
             commandProperties = {
@@ -45,7 +45,7 @@ public class CBHandler {
             }
 		
             )
-    
+    */
    // @HystrixCommand(fallbackMethod = "fallbackRequestHandler")
 	public ResponseEntity<String> requestHandler(String userName, String password)
 	{
