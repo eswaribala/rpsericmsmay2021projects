@@ -70,7 +70,7 @@ public class PreFilterImpl extends ZuulFilter {
         log.info("Entering pre filter........");
         log.info( servletRequest.getRemoteAddr());
         log.info("PreFilter: " + String.format("%s request to %s",  servletRequest.getMethod(), servletRequest.getRequestURL().toString()));
-        //http://localhost:8765/api/appointment?userName=admin324534253&userPwd=admin
+        //http://localhost:8765/api/product?userName=eswari&userPwd=test@123
         Map<String,List<String>> params=ctx.getRequestQueryParams();
         List<String> data =params.values().stream()
         .flatMap(Collection::stream)
