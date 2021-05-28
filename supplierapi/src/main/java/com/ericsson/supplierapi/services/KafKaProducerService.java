@@ -18,6 +18,7 @@ import com.ericsson.supplierapi.models.Product;
 import com.ericsson.supplierapi.models.Supplier;
 import com.ericsson.supplierapi.repositories.ProductRepository;
 import com.ericsson.supplierapi.repositories.SupplierRepository;
+import com.google.gson.Gson;
 
 
 
@@ -44,34 +45,47 @@ public class KafKaProducerService
 	
 	public void sendMessage(Supplier supplier, long productId) 
 	{
-		Supplier supplierObj=supplier;
-		Product productObj=this.productRepository.findById(productId).orElse(null);
+		Supplier supplierObj=new Supplier();
+		Product productObj=this.productRepository.findByProductId(productId).get(0);
+		System.out.println("product data: " + productObj.getName());
+
 		if(productObj!=null)
 		{
 			supplierObj.setProductId(productId);
 			this.supplierService.addSupplier(supplierObj, productId);
-		}
+			
+		
+		Gson gson=new Gson();
+		
+		Supplier supplierData=new Supplier();
+		supplierData.setSupplierId(supplier.getSupplierId());
+		supplierData.setSupplierName(supplier.getSupplierName());
+		supplierData.setProductId(productId);
 		//for demo purpose 
-		
+		/*
 		ListenableFuture<SendResult<String, Supplier>> future 
-			= this.kafkaTemplate.send(supplierTopicName, supplierObj);
-		
+		= this.kafkaTemplate.send(supplierTopicName, supplierData);
 		future.addCallback(new ListenableFutureCallback<SendResult<String, Supplier>>() {
-            @Override
-            public void onSuccess(SendResult<String, Supplier> result) {
-            	
-            	logger.info("Sent message: " + supplierObj.getSupplierName()
-            			+ " with offset: " + result.getRecordMetadata().offset());
-            	System.out.println("Sent message: " + supplierObj.getSupplierName()
-    			+ " with offset: " + result.getRecordMetadata().offset());
-            }
-            
+	        @Override
+	        public void onSuccess(SendResult<String, Supplier> result) {
+	        	
+	        	logger.info("Sent message: " + supplierData.getSupplierName()
+	        			+ " with offset: " + result.getRecordMetadata().offset());
+	        	System.out.println("Sent message: " + supplierData.getSupplierName()
+				+ " with offset: " + result.getRecordMetadata().offset());
+	        }
+	        
 
-            @Override
-            public void onFailure(Throwable ex) {
-            	logger.error("Unable to send Supplier Data : ", ex);
-            }
-       });
+	        @Override
+	        public void onFailure(Throwable ex) {
+	        	logger.error("Unable to send Supplier Data : ", ex);
+	        }
+	   });
+	   */
+		}
+	
+		
+	
 	}
 	
 	

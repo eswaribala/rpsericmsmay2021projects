@@ -21,20 +21,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 
 @Document(collection = "Suppliers")
 
 public class Supplier {
-	@Id
-    
-    @Column(name="Supplier_Id")
+	
 	private long supplierId;
-	@Column(name="Supplier_Name")
+	
 	private String supplierName;
-	@Embedded
-	private Address address;
+	
+	private String address;
 	
 	private long productId;
 	
