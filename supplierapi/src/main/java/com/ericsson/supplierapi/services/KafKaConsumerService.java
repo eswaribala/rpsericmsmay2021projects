@@ -32,19 +32,19 @@ public class KafKaConsumerService
 		String[] data=message.split(",");
 		Product product=new Product();
 		Gson gson=new Gson();
-		if(Integer.parseInt(data[0])>0)
-		{
+		//if(Integer.parseInt(data[0])>0)
+	//	{
 			product= gson.fromJson(message, Product.class);
 		  
 		productRespository.save( product);
 		logger.info(String.format("Product Stored -> %s,%s", 
 				product.getProductId(),product.getBufferLevel()));
-		}
-		else
-		{
-			logger.info(String.format("Invalid product Id -> %s", 
-					data[0]));
-		}
+		//}
+		//else
+		//{
+			//logger.info(String.format("Invalid product Id -> %s", 
+				//	data[0]));
+		//}
 		
 	}
 
