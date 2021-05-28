@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ericsson.productapi.models.Product;
+import com.ericsson.productapi.services.ProductPublisherService;
 import com.ericsson.productapi.services.ProductService;
 
 @RestController
@@ -22,6 +23,8 @@ import com.ericsson.productapi.services.ProductService;
 public class ProductController {
     @Autowired
 	private ProductService productService;
+    @Autowired
+    private ProductPublisherService productPublisherService;
 
 
 	 @PostMapping({"/v1.0", "/v1.1"})
@@ -75,7 +78,17 @@ public class ProductController {
 		 
 	 }
 	 
-	 
+	 @GetMapping({"/v1.0/publish/{productId}", "/v1.1/publish/{productId}"})
+	 public ResponseEntity<?> publishProduct(@PathVariable("productId") long productId)
+	 {
+		
+			if(this.productPublisherService.sendProductDetails(productId))
+				return ResponseEntity.ok("Product Published");
+			else
+		    	return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Product Not Available");
+
+	 }
+
 	 
 
 }
