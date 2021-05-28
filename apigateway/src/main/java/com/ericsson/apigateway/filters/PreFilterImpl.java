@@ -90,6 +90,7 @@ public class PreFilterImpl extends ZuulFilter {
 	       headers.setContentType(MediaType.APPLICATION_JSON);
 	    HttpEntity request = new HttpEntity<>(jwtRequest,headers);
  	        //phase 1 get jwt token
+	    //synchronous inter service communication
  	    ResponseEntity<?> authResponse=restTemplate.
  		      postForEntity(authUrl+"signin",request, String.class);
  	    log.info(authResponse.getBody().toString());

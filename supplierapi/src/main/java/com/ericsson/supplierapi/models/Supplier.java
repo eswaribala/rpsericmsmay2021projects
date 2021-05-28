@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -21,10 +23,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name="Supplier")
+
+@Document(collection = "Suppliers")
+
 public class Supplier {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     @Column(name="Supplier_Id")
 	private long supplierId;
 	@Column(name="Supplier_Name")
