@@ -1,0 +1,2 @@
+2021-05-28 11:21:57,146 INFO com.ericsson.productapi.ProductapiApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-05-28 11:22:21,413 INFO com.ericsson.productapi.ProductapiApplication [restartedMain] Started ProductapiApplication in 28.024 seconds (JVM running for 29.887)
