@@ -4,3 +4,5 @@
 2021-05-28 12:06:58,658 INFO com.ericsson.productapi.ProductapiApplication [restartedMain] Started ProductapiApplication in 23.911 seconds (JVM running for 25.084)
 2021-05-28 12:19:57,644 INFO com.ericsson.productapi.ProductapiApplication [restartedMain] No active profile set, falling back to default profiles: default
 2021-05-28 12:20:17,599 INFO com.ericsson.productapi.ProductapiApplication [restartedMain] Started ProductapiApplication in 22.865 seconds (JVM running for 23.923)
+2021-05-28 14:30:35,628 INFO com.ericsson.productapi.ProductapiApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-05-28 14:30:57,637 INFO com.ericsson.productapi.ProductapiApplication [restartedMain] Started ProductapiApplication in 24.957 seconds (JVM running for 26.17)

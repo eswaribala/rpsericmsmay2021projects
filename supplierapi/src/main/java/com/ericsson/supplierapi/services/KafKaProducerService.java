@@ -45,7 +45,7 @@ public class KafKaProducerService
 	
 	public void sendMessage(Supplier supplier, long productId) 
 	{
-		Supplier supplierObj=new Supplier();
+		Supplier supplierObj=supplier;
 		Product productObj=this.productRepository.findByProductId(productId).get(0);
 		System.out.println("product data: " + productObj.getName());
 
@@ -56,13 +56,13 @@ public class KafKaProducerService
 			
 		
 		Gson gson=new Gson();
-		
+		/*
 		Supplier supplierData=new Supplier();
 		supplierData.setSupplierId(supplier.getSupplierId());
 		supplierData.setSupplierName(supplier.getSupplierName());
 		supplierData.setProductId(productId);
 		//for demo purpose 
-		/*
+		
 		ListenableFuture<SendResult<String, Supplier>> future 
 		= this.kafkaTemplate.send(supplierTopicName, supplierData);
 		future.addCallback(new ListenableFutureCallback<SendResult<String, Supplier>>() {

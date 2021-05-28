@@ -1,5 +1,7 @@
 package com.ericsson.supplierapi.models;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -25,7 +27,7 @@ import lombok.NoArgsConstructor;
 
 @Document(collection = "Suppliers")
 
-public class Supplier {
+public class Supplier implements Serializable {
 	
 	private long supplierId;
 	
